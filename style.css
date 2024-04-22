@@ -1,0 +1,1068 @@
+:root {
+    --black-shadow: hsl(0, 0%, 0%, 0.18);
+    --black-color: hsl(0, 0%, 14%);
+    --black-color-light: hsla(0, 0%, 14%, 0.81);
+    --black-color-ghost: hsl(0, 0%, 54%);
+    --dark-color: hsl(0, 0%, 28%);
+    --dark-color-light: hsla(0, 0%, 28%, 0.81);
+    --super-white-color: hsl(0, 0%, 100%);
+    --off-white-color: hsl(0, 0%, 96%);
+    --gray-color: hsl(0, 0%, 75%);
+    --primary-color: hsl(204, 100%, 73%);
+    --primary-color-ghost: hsla(204, 100%, 73%, 0.36);
+    --secondary-color: hsl(75, 100%, 94%);
+    --secondary-color-ghost: hsla(75, 100%, 94%, 0.72);
+    --highlight-color: hsl(330, 100%, 71%);
+    --highlight-color-ghost: hsla(330, 100%, 71%, 0.81);
+    --primary-gradient: linear-gradient(0deg, var(--primary-color), var(--secondary-color));
+    --primary-gradient-180: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    --highlight-gradient: linear-gradient(0deg, var(--highlight-color), var(--secondary-color));
+    --highlight-gradient-180: linear-gradient(180deg, var(--highlight-color), var(--secondary-color));
+
+    --root-font-size: 16px;
+    font-size: var(--root-font-size);
+
+    --font-primary: 'Helvetica Neue', Helvetica, sans-serif;
+    --font-secondary: 'Times', serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    border: 0px dotted var(--highlight-color-ghost);
+    padding: 0;
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+html {
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    text-align: center;
+    overflow: hidden;
+    font-family: var(--font-primary);
+}
+
+.main-container {
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow of the main container */
+    background: var(--super-white-color);
+}
+
+.main-container-sky {
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow of the main container */
+    background: var(--primary-gradient-180);
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Allow vertical scrolling */
+    /* Add padding or margins if needed */
+}
+
+.container {
+    background: none;
+}
+
+.tagline {
+    margin: 0;
+}
+
+h1 {
+    color: var(--black-color);
+    letter-spacing: 2.7px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 27px;
+    font-style: oblique;
+    font-weight: lighter;
+    color: var(--dark-color-light);
+    letter-spacing: .81px;
+    font-family: var(--font-secondary);
+}
+
+.oblique {
+    font-style: oblique;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.sticky-right {
+    position: fixed;
+    right: 0;
+    top: 50%; /* Adjust this value to position it vertically as desired */
+    transform: translateY(-50%); /*Center the element vertically */
+}
+
+.sticky-top-right {
+    position: fixed;
+    right: 0;
+    top: 27%; /* Adjust this value to position it vertically as desired */
+    transform: translateY(-27%); /*Center the element vertically */
+}
+
+.sticky-top {
+    position: fixed;
+    top: 0;
+    right: 50%; /* Adjust this value to position it vertically as desired */
+    transform: translateX(50%); /*Center the element vertically */
+}
+
+.sticky-left {
+    position: fixed;
+    left: 0;
+    top: 50%; /* Adjust this value to position it vertically as desired */
+    transform: translateY(-50%); /*Center the element vertically */
+}
+
+.sticky-element-btm {
+    position: relative;
+    bottom: 0;
+    right: 50%; /* Adjust this value to position it vertically as desired */
+    transform: translateX(50%);
+}
+
+.nav-tab-left {
+    width: 36px;
+    height: 36px;
+    background: var(--super-white-color);
+    border-radius: 0 50% 50% 0;
+    border: none;
+    padding: 0;
+    transition: .18s;
+    /*
+    filter: drop-shadow(0px 3px 3px var(--black-color-ghost));
+    */
+    box-shadow: 0px 4px 4px 0px var(--black-shadow);
+    opacity: .63;
+    margin: 0;
+}
+
+.nav-tab-right {
+    width: 36px;
+    height: 36px;
+    background: var(--super-white-color);
+    border-radius: 50% 0 0 50%;
+    border: none;
+    padding: 0;
+    transition: .18s;
+    /*
+    filter: drop-shadow(0px 3px 3px var(--black-color-ghost));
+    */
+    box-shadow: 0px 4px 4px 0px var(--black-shadow);
+    opacity: .63;
+    margin: 0;
+}
+
+.design-tab {
+    width: 117px;
+    background: var(--super-white-color);
+    border-radius: 27px 0 0 27px;
+    padding: 0;
+    transition: .18s;
+    filter: drop-shadow(0px 3px 3px var(--black-color-ghost));
+}
+
+.design-tab-top {
+    width: 180px;
+    background: var(--super-white-color);
+    border-radius: 0 0 50% 50%;
+    padding: 0 0 0 1px;
+    transition: .18s;
+    /*
+    filter: drop-shadow(2px 2px 2px var(--black-color-ghost));
+    */
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,.18);
+    z-index: 1;
+    height: 36px;
+}
+
+.design-tab-top:hover {
+    cursor: pointer;
+}
+
+p.tab-text {
+    margin: 0 0 0 0;
+    text-align: none;
+    font-size: 15px;
+    font-family: monospace;
+    color: var(--black-color-light);
+    letter-spacing: .18px;
+    line-height: 1.35;
+    border-radius: 3px;
+    border: 0px solid pink;
+    padding: 0 0 7px 0;
+}
+
+.art-block {
+    width: 333px;
+    height: 45px;
+    background: var(--super-white-color);
+    border-radius: 18px 18px 50% 50%;
+    margin: 12px auto;
+    padding: 6px 18px 18px 18px;
+    /*
+    filter: drop-shadow(0px 3px 3px var(--black-color-ghost));
+    */
+    box-shadow: 0px 4px 4px 0px var(--black-shadow);
+    transition: .81s;
+}
+
+/*
+.disable-hover .art-block:hover {
+    cursor: pointer;
+    transform: none;
+    opacity: 1;
+}
+*/
+
+.art-block:hover {
+    cursor: pointer;
+    transform: scale(103%);
+    opacity: .81;
+}
+
+.padding-18 {
+    padding: 18px;
+}
+
+.art-info {
+    transition: .45s;
+    opacity: 0;
+    z-index: -1;
+}
+
+.full-opacity {
+    opacity: 1;
+}
+
+p.article {
+    margin: 0 0 0 0;
+    font-size: 18px;
+    font-family: monospace;
+    color: var(--black-color-light);
+    letter-spacing: .81px;
+    line-height: 1.35;
+    border-radius: 3px;
+    border: 0px solid pink;
+    padding: 0 0 9px 0;
+}
+
+.web-dev-container {
+    margin: auto;
+}
+
+.music-player {
+    flex-direction: column;
+    width: 320px;
+    min-height: 320px;
+    margin: 15px 18px 18px 18px;
+    padding: 0px;
+    background: var(--off-white-color);
+    color: var(--highlight-color); 
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.controls {
+    display: flex;
+    background: var(--super-white-color);
+    border-radius: 27px;
+    padding: 0px;
+    margin: 18px 0 15px 0;
+}
+
+.control {
+    border: 0px dotted var(--highlight-color);
+    border-radius: 18px;
+    font-size: 13px;
+    font-weight: lighter;
+    color: var(--black-color-ghost);
+    background: none;
+    padding: 0px;
+    margin: 0px 5px;
+    transition-duration: .4s;
+    height: 36px;
+    width: 36px;
+}
+
+.control:hover {
+    color: var(--highlight-color-ghost);
+    cursor: pointer;
+}
+
+.gif-container {
+    border-width: 18px 18px 0px 18px;
+    border-color: var(--super-white-color);
+    border-style: groove;
+    border-radius: 50% 50% 0 0;
+    height: 36vh;
+    width: 61vw;
+    background-size: 54%;
+    background-position: center;
+    margin: 0 auto;
+    filter: brightness(155%);
+    box-shadow: 0 0 36px var(--super-white-color);
+    /*
+    outline-width: 1px 0 0 0;
+    outline-color: white;
+    outline-style: double;
+    */
+}
+
+.gif-step-1 {
+    position: relative;
+    width: 65vw;
+    border-top: none;
+    border-bottom: 1vw solid var(--secondary-color-ghost);
+    border-left: 1.6vw solid transparent;
+    border-right: 1.6vw solid transparent;
+    margin: auto;
+    filter: brightness(155%);
+    z-index: 1;
+}
+
+.gif-panel-1 {
+    position: relative;
+    width: 65vw;
+    height: 2.2vh;
+    background: var(--highlight-gradient-180);
+    margin: auto;
+}
+
+.gif-step-2 {
+    position: relative;
+    width: 69vw;
+    border-top: none;
+    border-bottom: 1vw solid var(--secondary-color-ghost);
+    border-left: 1.6vw solid transparent;
+    border-right: 1.6vw solid transparent;
+    margin: auto;
+    z-index: 1;
+    filter: brightness(155%);
+}
+
+.gif-panel-2 {
+    position: relative;
+    width: 69vw;
+    height: 2.2vh;
+    background: var(--highlight-gradient-180);
+    margin: auto;
+}
+
+.gif-step-3 {
+    position: relative;
+    width: 73vw;
+    border-top: none;
+    border-bottom: 1vw solid var(--secondary-color-ghost);
+    border-left: 1.6vw solid transparent;
+    border-right: 1.6vw solid transparent;
+    margin: auto;
+    z-index: 1;
+    filter: brightness(155%);
+}
+
+.gif-panel-3 {
+    position: relative;
+    width: 73vw;
+    height: 2.2vh;
+    background: var(--highlight-gradient-180);
+    margin: auto;
+}
+
+.gif-step-4 {
+    position: relative;
+    width: 77vw;
+    border-top: none;
+    border-bottom: 1vw solid var(--secondary-color-ghost);
+    border-left: 1.6vw solid transparent;
+    border-right: 1.6vw solid transparent;
+    margin: auto;
+    z-index: 1;
+    filter: brightness(155%);
+}
+
+.gif-panel-4 {
+    position: relative;
+    width: 77vw;
+    height: 2.2vh;
+    background: var(--highlight-gradient-180);
+    margin: auto;
+}
+
+.gif-step-5 {
+    position: relative;
+    width: 81vw;
+    border-top: none;
+    border-bottom: 1vw solid var(--secondary-color-ghost);
+    border-left: 1.6vw solid transparent;
+    border-right: 1.6vw solid transparent;
+    margin: auto;
+    z-index: 1;
+    filter: brightness(155%);
+}
+
+.gif-panel-5 {
+    position: relative;
+    width: 81vw;
+    height: 2.2vh;
+    background: var(--highlight-gradient-180);
+    margin: auto;
+}
+
+.rotate90 {
+    transform: rotate(90deg);
+    font-size: 18px
+}
+
+.light {
+    font-size: 16px;
+    transform: rotate(90deg) translate(.63px);
+}
+
+.halo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--off-white-color);
+    height: 270px;
+    width: 270px;
+    margin: 18px;
+    transition: .81s;
+    background: var(--primary-gradient-180);
+}
+
+.grow-big {
+    transform: scale(333%);
+    /* pointer-events: none; */
+}
+
+.grow-med {
+    transform: scale(180%);
+}
+
+.grow-y {
+    height: 333px;
+}
+
+
+.grow-margin {
+    margin: 72px 0 81px 0;
+}
+
+.line-height {
+    line-height: 1.8;
+}
+
+.letter-spacing {
+    letter-spacing: .27em;
+}
+
+.half-opacity {
+    opacity: 0.54;
+}
+
+.sun {
+    position: absolute;
+    background: var(--highlight-gradient);
+    opacity: 0.81;
+    background-size: 555%;
+    background-position: 13%;
+    border-radius: 100%;
+    height: 117px;
+    width: 117px;
+    margin: 81px;
+    transition: .81s;
+    z-index: 0;
+}
+
+.son {
+    position: absolute;
+    background: var(--highlight-gradient);
+    background-image: url("./img/about/colbyramsay-avatar.jpg");
+    background-size: 144%;
+    background-position: 50%;
+    border-radius: 100%;
+    opacity: .54;
+    height: 81px;
+    width: 81px;
+    margin: 81px;
+    transition: .81s;
+    z-index: 0;
+    filter: brightness(135%);
+}
+
+.sun:hover {
+    cursor: pointer;
+}
+
+.son:hover {
+    cursor: pointer;
+    filter: brightness(171%);
+    opacity: .36;
+    transform: scale(108%);
+}
+
+
+@keyframes sun-glow {
+    0%    {filter: drop-shadow(0 0 -1em var(--highlight-color));}
+    40%   {filter: drop-shadow(0 0 2em var(--highlight-color));}
+    60%   {filter: drop-shadow(0 0 2em var(--highlight-color));}
+    100%  {filter: drop-shadow(0 0 -1em var(--highlight-color));}
+}
+
+@keyframes sun-rotate {
+    0%  {transform: rotate(0deg);}
+    40% {transform: rotate(9deg);}
+    60% {transform: rotate(19deg);}
+    100%  {transform: rotate(0deg);}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .sun {
+        animation: sun-glow infinite 9s ease;
+    }
+    .halo {
+        animation: sun-rotate infinite 18s ease;
+    }
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 6px;
+    z-index: 1;
+}
+
+input {
+    border: 0px solid var(--gray-color);
+    color: var(--gray-color);
+    background: var(--super-white-color);
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 0 2px var(--black-color-ghost);
+    text-align: center;
+    margin: 0;
+    width: 153px;
+    padding: 9px;
+    letter-spacing: .18px;
+    font-size: 15px;
+    transition: .81s;
+}
+
+input:focus {
+    border: 0px solid var(--primary-color);
+    box-shadow: 0 0 3px var(--black-color-ghost);
+    outline-offset: -1px;
+    outline: 1px solid var(--black-color-light);
+    color: var(--dark-color-light);
+}
+
+.search-btn {
+    text-align: center;
+    letter-spacing: .18px;
+    font-size: 15px;
+    font-family: monospace;
+    line-height: 1;
+    width: 153px;
+    margin: 0 0 18px 0;
+    padding: 9px 0 12px 1px;
+    background: var(--black-color);
+    border-radius: 0 0 50% 50%;
+    border: 0px solid var(--highlight-color-ghost);
+    color: var(--off-white-color);
+    transition: .27s;
+}
+
+.search-btn:hover {
+    cursor: pointer;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.header {
+    height: 36px;
+    font-size: larger;
+    font-weight: normal;
+    background: none;
+    padding: 0 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.footer {
+    height: 0;
+    font-family: var(--font-primary);
+    font-size: 13px;
+    letter-spacing: 1.8px;
+    opacity: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.footer-list {
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 18px 0 18px;
+}
+
+.nav-links {
+    padding: 9px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black-color-light);
+    transition-duration: .18s;
+    padding: 3px;
+    margin: 0;
+    border-radius: 18px;
+}
+
+button {
+    background: none;
+    color: var(--dark-color-light);
+    border: none;
+    font-size: 24px;
+    border-radius: 18px;
+    padding: 0;
+    margin: 0;
+    transition-duration: 0.18s;
+}
+ 
+@media (hover: hover) { 
+    button:hover { 
+    cursor: pointer;
+    opacity: 0.54;
+    } 
+
+    a:hover {
+        opacity: .54;
+    }
+} 
+
+.underline {
+    text-decoration: underline dotted;
+}
+
+.normal-text {
+    font-style: normal;
+}
+
+.banner {
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 36px 0 36px;
+    margin: 18px 0 0 0;
+    min-height: 72px;
+}
+
+.banner-large {
+    height: 135px;
+}
+
+.pink-text {
+    color: #ff3399;
+}
+
+.highlight-text {
+    background-color: none;
+    color: #ff3399;
+    font-size: x-large;
+    border-radius: 3px;
+    padding: 5px 9px 5px 9px;
+}
+
+.hero-container {
+    background-color: white;
+    background-position: center;
+    background-size: auto;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* if there is more content than the min-height, container will grow */
+    min-height: 800px;
+    margin: 18px;
+}
+
+.hello-image {
+    background-image: url("./img/about/colbyramsay-about-me-1024px.gif");
+    /* if bg-pos is 0, image will stick to left side */
+    background-position: 0;
+}
+
+.design-image {
+    background-image: repeating-radial-gradient(whitesmoke, white 18%, whitesmoke 36%);
+}
+
+.music-image {
+    background-image: url("./img/about/colbyramsay-about-me-keyboard-1024px.gif");
+}
+
+.treat-image {
+    background-image: url(".img/design/colbyramsay-packaging-design-3d-render-hemp-dog-treats-1920px");
+}
+
+.design-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 9px 0 0 0;
+}
+
+.card {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border-radius: 18px;
+    width: 350px;
+    height: 197px;
+    padding: 0;
+    margin: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .27s;
+}
+
+.card:hover {
+    transform: scale(108%);
+}
+
+.card-large {
+    background-color: var(--super-white-color);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 18px;
+    height: 360px;
+    width: 640px;
+    max-width: 81vw;
+    margin: 27px;
+    transition: .27s;
+}
+
+/*
+.card-large:hover {
+    transform: scale(108%);
+}
+*/
+
+a.card-links {
+    width: 350px;
+    height: 197px;
+    background: transparent;
+    border: 0px solid hotpink;
+    box-shadow: 2px 4px 4px 0px rgba(0,0,0,.18);
+    font-size: large;
+}
+
+.card-supplements {
+    background-image: url("./img/design/supplements/colbyramsay-label-design-3d-render-pet-supplements-1920px.jpg");
+}
+
+.card-supplements-turkey {
+    background-image: url("./img/design/supplements/colbyramsay-label-design-3d-render-pet-supplement-turkey-tail-mushroom-1920px.jpg");
+}
+
+.card-supplements-kelp {
+    background-image: url("./img/design/supplements/colbyramsay-label-design-3d-render-pet-supplement-atlantic-kelp-1920px.jpg");
+}
+
+.card-supplements-pumpkin {
+    background-image: url("./img/design/supplements/colbyramsay-label-design-3d-render-pet-supplement-pumpkin-1920px.jpg");
+}
+
+.card-supplements-mushroom {
+    background-image: url("./img/design/supplements/colbyramsay-label-design-3d-render-pet-supplement-7-mushroom-blend-1920px.jpg");
+}
+
+.card-one-world {
+    background-image: url("./img/design/one-world-two-eyes/colbyramsay-logo-design-one-world-two-eyes-1920px.png");
+}
+
+.card-skincare-1 {
+    background-image: url("./img/design/skincare-1/colbyramsay-label-design-3d-render-hemp-skincare-products-1920px.jpg");
+}
+
+.card-skincare-1-body-butter {
+    background-image: url("./img/design/skincare-1/colbyramsay-label-design-3d-render-hemp-body-butter-1920px.jpg");
+}
+
+.card-skincare-1-face-cream {
+    background-image: url("./img/design/skincare-1/colbyramsay-label-design-3d-render-hemp-face-cream-1920px.jpg");
+}
+
+.card-skincare-1-lip-balm {
+    background-image: url("./img/design/skincare-1/colbyramsay-label-design-3d-render-hemp-lip-balm-1920px.jpg");
+}
+
+.card-skincare-1-bottles {
+    background-image: url("./img/design/skincare-1/colbyramsay-label-design-3d-render-hemp-skincare-1920px.jpg");
+}
+
+.card-truvai-1 {
+    background-image: url("./img/design/truvai/colbyramsay-packaging-design-truvai-jewellery-A2-1820px.jpg");
+}
+
+.card-truvai-2 {
+    background-image: url("./img/design/truvai/colbyramsay-packaging-design-truvai-jewellery-B2-1820px.jpg");
+}
+
+.card-treats {
+    background-image: url("./img/design/treats/colbyramsay-packaging-design-3d-render-hemp-dog-treats-1920px.jpg");
+}
+
+.card-treats-apple {
+    background-image: url("./img/design/treats/colbyramsay-packaging-design-3d-render-hemp-dog-treats-apple-1920px.jpg");
+}
+
+.card-treats-blueberry {
+    background-image: url("./img/design/treats/colbyramsay-packaging-design-3d-render-hemp-dog-treats-blueberry-1920px.jpg");
+}
+
+.card-treats-pb {
+    background-image: url("./img/design/treats/colbyramsay-packaging-design-3d-render-hemp-dog-treats-peanut-butter-1920px.jpg");
+}
+
+.card-treats-pumpkin {
+    background-image: url("./img/design/treats/colbyramsay-packaging-design-3d-render-hemp-dog-treats-pumpkin-1920px.jpg");
+}
+
+
+.card-skincare-2 {
+    background-image: url("./img/design/skincare-2/colbyramsay-label-design-3d-render-hemp-fix-lip-balm-and-body-butter-1920px.jpg");
+}
+
+.card-skincare-2-lip-balm {
+    background-image: url("./img/design/skincare-2/colbyramsay-label-design-3d-render-hemp-fix-lip-balm-1920px.jpg");
+}
+
+.card-skincare-2-body-butter {
+    background-image: url("./img/design/skincare-2/colbyramsay-label-design-3d-render-hemp-fix-body-butter-1920px.jpg");
+}   
+
+.card-tinctures-1 {
+    background-image: url("./img/design/tinctures-1/colbyramsay-label-design-3d-render-hemp-tinctures-original-1920px.jpg");
+}
+
+.card-tinctures-1-peppermint {
+    background-image: url("./img/design/tinctures-1/colbyramsay-label-design-3d-render-hemp-tinctures-peppermint-1920px.jpg");
+}
+
+.card-tinctures-1-natural {
+    background-image: url("./img/design/tinctures-1/colbyramsay-label-design-3d-render-hemp-tinctures-natural-1920px.jpg");
+}
+
+.card-bath-bombs {
+    background-image: url("./img/design/bath-bombs/colbyramsay-3d-render-bath-bombs-2-1920px.jpg");
+}
+
+.card-bath-bombs-a {
+    background-image: url("./img/design/bath-bombs/colbyramsay-3d-render-bath-bombs-1-1920px.jpg");
+}
+
+.card-bath-bombs-b {
+    background-image: url("./img/design/bath-bombs/colbyramsay-3d-render-bath-bombs-3-1920px.jpg");
+}
+
+.card-gummies {
+    background-image: url("./img/design/gummies/colbyramsay-packaging-design-3d-render-hemp-gummies-1920px.jpg");
+}
+
+.card-tinctures-2-shamp {
+    background-image: url("./img/design/tinctures-2/colbyramsay-label-design-3d-render-hemp-pet-shampoo-conditioner-1920px.jpg");
+}
+
+.card-tinctures-2 {
+    background-image: url("./img/design/tinctures-2/colbyramsay-label-design-3d-render-hemp-pet-tinctures-1920px.jpg");
+}
+
+.card-tinctures-2-pet-products {
+    background-image: url("./img/design/tinctures-2/colbyramsay-label-design-3d-render-hemp-pet-products-1920px.jpg");
+}
+
+.card-tinctures-2 {
+    background-image: url("./img/design/tinctures-2/colbyramsay-label-design-3d-render-hemp-pet-tinctures-1920px.jpg");
+}
+
+.card-clocks-1 {
+    background-image: url("./img/design/clocks-1/colbyramsay-product-design-minimalist-steel-bar-circle-clock-white-1920px.jpg");
+}
+
+.card-clocks-1-line {
+    background-image: url("./img/design/clocks-1/colbyramsay-product-design-minimalist-steel-bar-line-clock-black-1920px.jpg");
+}
+
+.card-clocks-1-triangle {
+    background-image: url("./img/design/clocks-1/colbyramsay-product-design-minimalist-steel-triangle-clock-black-1920px.jpg");
+}
+
+.card-clocks-1-circle {
+    background-image: url("./img/design/clocks-1/colbyramsay-product-design-minimalist-steel-circle-clock-teal-1920px.jpg");
+}
+
+.card-clocks-2 {
+    background-image: url("./img/design/clocks-2/colbyramsay-product-design-wooden-dinosaur-clock-red-1920px.jpg");
+}
+
+.card-clocks-2-bunny {
+    background-image: url("./img/design/clocks-2/colbyramsay-product-design-wooden-bunny-clock-block-1920px.jpg");
+}
+
+.card-clocks-2-elephant {
+    background-image: url("./img/design/clocks-2/colbyramsay-product-design-wooden-elephant-clock-pink-1920px.jpg");
+}
+
+.card-clocks-2-sloth {
+    background-image: url("./img/design/clocks-2/colbyramsay-product-design-wooden-sloth-clock-blue-1920px.jpg");
+}
+
+.card-clocks-2-wooden-square {
+    background-image: url("./img/design/clocks-2/colbyramsay-product-design-wooden-square-number-clock-light-blue-1920px.jpg");
+}
+
+.card-lillian-sinclair {
+    background-image: url("./img/design/lillian-sinclair/colbyramsay-logo-design-branding-lillian-sinclair-stamp-1920px.jpg");
+}
+
+.card-lillian-sinclair-mag {
+    background-image: url("./img/design/lillian-sinclair/colbyramsay-logo-design-branding-lillian-sinclair-1920px.jpg");
+}
+
+.card-ok-market {
+    background-image: url("./img/design/the-ok-market/colbyramsay-web-design-the-ok-market-1920px.jpg");
+}
+
+.card-ok-market-logo {
+    background-image: url("./img/design/the-ok-market/colbyramsay-branding-logo-design-the-ok-market-1920px.jpg");
+}
+
+.card-bar-stools {
+    background-image: url("./img/design/bar-stools/colbyramsay-industrial-design-fabrication-brewery-bar-stools-4-1920px.jpg");
+}
+
+.card-bar-stools-3 {
+    background-image: url("./img/design/bar-stools/colbyramsay-industrial-design-fabrication-brewery-bar-stools-3-1920px.jpg");
+}
+
+.card-bar-stools-2 {
+    background-image: url("./img/design/bar-stools/colbyramsay-industrial-design-fabrication-brewery-bar-stools-2-1920px.jpg");
+}
+
+.card-bar-stools-1 {
+    background-image: url("./img/design/bar-stools/colbyramsay-industrial-design-fabrication-brewery-bar-stools-1-1920px.jpg");
+}
+
+.arrow {
+    border: solid var(--black-color-light);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 6px;
+    margin: 4px 0 0 0;
+}
+  
+.right {
+    transform: rotate(-45deg);  
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+/* 
+
+    is it best practice to list webkit before or after regular transform?
+
+    from what we can recall, it is better to list the *regular* transform
+    property *after* the *webkit* transform property.
+
+*/
+
+/* 
+
+    you are correct. it is best practice to list the *regular* transform
+    properties *after* the *webkit* or any other legacy transform properties.
+
+*/
